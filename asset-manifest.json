@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hambardzumianvahag/uko-dashboard-mui.git/static/css/main.c8c950e2.css",
+    "main.js": "/hambardzumianvahag/uko-dashboard-mui.git/static/js/main.d044546f.js",
+    "index.html": "/hambardzumianvahag/uko-dashboard-mui.git/index.html",
+    "main.c8c950e2.css.map": "/hambardzumianvahag/uko-dashboard-mui.git/static/css/main.c8c950e2.css.map",
+    "main.d044546f.js.map": "/hambardzumianvahag/uko-dashboard-mui.git/static/js/main.d044546f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8c950e2.css",
+    "static/js/main.d044546f.js"
+  ]
+}
