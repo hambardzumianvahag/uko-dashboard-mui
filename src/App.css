@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.layout{
+  width: 95%;
+  margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo{
+  width: 20px;
   display: flex;
-  flex-direction: column;
+  gap: 20px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.header{
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon{
+  cursor: pointer;
+  margin: 0 5px;
+  color: gray;
+}
+.header-icons{
+  display: flex;
+  align-items: center;
+}
+.account-icon{
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid rgb(177, 173, 173);
+  display: flex;
+  align-items: center;
+}
+.account-icon span{
+  color: rgb(150, 152, 153);
+}
+.each{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.third{
+  display: flex;
+  align-items: center;
+}
+.table{
+  margin-top: 20px;
 }
