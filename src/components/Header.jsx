@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderLogo from "./HeaderLogo";
-// import SearchPanel from "./SearchPanel";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -9,7 +8,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 import FaceRoundedIcon from "@mui/icons-material/FaceRounded";
 
-export default function Header() {
+export default function Header({ first }) {
   return (
     <div className="header">
       <div className="logo">
@@ -25,7 +24,7 @@ export default function Header() {
         <AppsRoundedIcon className="apps icon" />
         <div className="account-icon">
           <p>
-            Hi, <span>Aaron Cooper</span>
+            Hi, <span>{first}</span>
           </p>
           <FaceRoundedIcon className="face icon" />
         </div>
