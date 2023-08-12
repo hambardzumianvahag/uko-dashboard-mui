@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-import { Button, Tab } from "@mui/material";
+import { Button } from "@mui/material";
 
 export default function SignUp({ switchTab }) {
   const [login, setLogin] = useState("");
