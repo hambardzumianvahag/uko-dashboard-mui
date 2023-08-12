@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hambardzumianvahag/uko-dashboard-mui.git/static/css/main.c8c950e2.css",
-    "main.js": "/hambardzumianvahag/uko-dashboard-mui.git/static/js/main.d044546f.js",
-    "index.html": "/hambardzumianvahag/uko-dashboard-mui.git/index.html",
-    "main.c8c950e2.css.map": "/hambardzumianvahag/uko-dashboard-mui.git/static/css/main.c8c950e2.css.map",
-    "main.d044546f.js.map": "/hambardzumianvahag/uko-dashboard-mui.git/static/js/main.d044546f.js.map"
+    "main.css": "/uko-dashboard-mui/static/css/main.7e9f665d.css",
+    "main.js": "/uko-dashboard-mui/static/js/main.eb96a150.js",
+    "index.html": "/uko-dashboard-mui/index.html",
+    "main.7e9f665d.css.map": "/uko-dashboard-mui/static/css/main.7e9f665d.css.map",
+    "main.eb96a150.js.map": "/uko-dashboard-mui/static/js/main.eb96a150.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8c950e2.css",
-    "static/js/main.d044546f.js"
+    "static/css/main.7e9f665d.css",
+    "static/js/main.eb96a150.js"
   ]
 }
