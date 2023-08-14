@@ -52,3 +52,17 @@
 .cards {
   margin: 5px 20px;
 }
+.tasks{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 0;
+  text-align: center;
+}
+.task{
+  width: 350px;
+  height: 500px;
+  border: 2px solid black;
+}

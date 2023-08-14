@@ -47,7 +47,7 @@ export default function Log({switchTrello, setFirst, first}) {
     setValue(newValue);
   };
   const switchTab = () => {
-    setValue(0);
+    setValue(1);
   };
 
   return (
@@ -59,16 +59,17 @@ export default function Log({switchTrello, setFirst, first}) {
           className="tab"
           aria-label="basic tabs example"
         >
-          <Tab label="Log In" {...a11yProps(0)} />
-          <Tab label="Log Out" {...a11yProps(1)} />
+          <Tab label="Sign Up" {...a11yProps(0)} />
+          <Tab label="Log In" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <SignIn switchTrello={switchTrello} setFirst={setFirst} first={first} />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
         <SignUp switchTab={switchTab} />
       </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        <SignIn switchTrello={switchTrello} setFirst={setFirst} first={first} />
+      </CustomTabPanel>
+
     </Box>
   );
 }

@@ -9,6 +9,7 @@ import Cards from "./Card";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Log from "./Log";
+import Trello from "./Trello";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,12 +44,12 @@ function a11yProps(index) {
   };
 }
 
-export default function Dashboard({first, setFirst}) {
+export default function Dashboard({ first, setFirst }) {
   const [value, setValue] = React.useState(0);
 
-  const switchTrello=()=>{
+  const switchTrello = () => {
     setValue(2);
-  }
+  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -111,7 +112,7 @@ export default function Dashboard({first, setFirst}) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Trello />
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Four
