@@ -1,11 +1,11 @@
-import { Button } from "@mui/material";
 import React from "react";
+import CreateTask from "./CreateTask";
 
 export default function Trello() {
   return (
     <div className="trello">
       <div>
-        <Button variant="outlined">Create New Task</Button>
+        <CreateTask />
       </div>
       <div className="tasks">
         <div className="task">
