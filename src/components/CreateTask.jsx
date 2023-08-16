@@ -33,11 +33,14 @@ const textFieldStyle = {
   marginTop: "10px",
 };
 
-export default function CreateTask() {
+export default function CreateTask({ setResult, result }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [user, setUser] = React.useState("");
+  const [taskName, setTaskName] = React.useState("");
+  const [taskDesc, setTaskDesc] = React.useState("");
+  const [selectedUser, setSelectedUser] = React.useState(null);
 
   React.useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -49,7 +52,20 @@ export default function CreateTask() {
     marginTop: "1rem",
     alignSelf: "flex-end",
   };
-
+  const handleName = (e) => {
+    setTaskName(e.target.value);
+  };
+  const handleDesc = (e) => {
+    setTaskDesc(e.target.value);
+  };
+  const handleSubmit = () => {
+    setResult({
+      ...result,
+      taskName: taskName,
+      taskDesc: taskDesc,
+      assignTo: selectedUser,
+    });
+  };
   return (
     <div>
       <Button variant="outlined" onClick={handleOpen} style={buttonStyle}>
@@ -71,14 +87,23 @@ export default function CreateTask() {
               label="Task Name"
               variant="outlined"
               style={textFieldStyle}
+              onChange={handleName}
             />
             <TextareaAutosize
               className="text-area"
               placeholder="Task Description"
+              onChange={handleDesc}
             />
-            <BasicSelect user={user} />
+            <BasicSelect
+              user={user}
+              setSelectedUser={setSelectedUser}
+              selectedUser={selectedUser}
+            />
             <Button
-			onClick={handleClose}
+              onClick={() => {
+                handleClose();
+                handleSubmit();
+              }}
               className="create-btn"
               variant="outlined"
               style={createTaskButtonStyle}

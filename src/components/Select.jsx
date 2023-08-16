@@ -4,21 +4,19 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function BasicSelect({ user }) {
-  const [selectedUser, setSelectedUser] = React.useState(null);
-
+export default function BasicSelect({ user, setSelectedUser, selectedUser }) {
   const handleChange = (event) => {
     setSelectedUser(event.target.value);
   };
 
   return (
     <div>
-      <FormControl sx={{minWidth: 120 }}>
+      <FormControl sx={{ minWidth: 120 }}>
         <InputLabel
           id="demo-simple-select-autowidth-label"
           sx={{
             backgroundColor: "white",
-            padding: "0 5px"
+            padding: "0 5px",
           }}
         >
           Assign to

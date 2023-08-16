@@ -79,3 +79,9 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.todo{
+  width: 90%;
+  margin: 0 auto;
+  height: 50px;
+  border: 1px solid #333;
+}
