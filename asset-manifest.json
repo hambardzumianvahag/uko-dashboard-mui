@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/uko-dashboard-mui/static/css/main.276f33d8.css",
-    "main.js": "/uko-dashboard-mui/static/js/main.6ebd8ccb.js",
+    "main.css": "/uko-dashboard-mui/static/css/main.958cf43a.css",
+    "main.js": "/uko-dashboard-mui/static/js/main.eab922e6.js",
     "index.html": "/uko-dashboard-mui/index.html",
-    "main.276f33d8.css.map": "/uko-dashboard-mui/static/css/main.276f33d8.css.map",
-    "main.6ebd8ccb.js.map": "/uko-dashboard-mui/static/js/main.6ebd8ccb.js.map"
+    "main.958cf43a.css.map": "/uko-dashboard-mui/static/css/main.958cf43a.css.map",
+    "main.eab922e6.js.map": "/uko-dashboard-mui/static/js/main.eab922e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.276f33d8.css",
-    "static/js/main.6ebd8ccb.js"
+    "static/css/main.958cf43a.css",
+    "static/js/main.eab922e6.js"
   ]
 }
