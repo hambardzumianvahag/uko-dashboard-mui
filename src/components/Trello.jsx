@@ -1,28 +1,36 @@
 import React, { useState } from "react";
 import CreateTask from "./CreateTask";
-import Tasks from "./Tasks";
+import Todo from "./Todo";
+import Done from "./Done";
+import InProgress from "./InProgress";
 
 export default function Trello() {
-  const [result, setResult] = useState({
-    taskName: "",
-    taskDesc: "",
-    assignTo: "",
-  });
+  const [result, setResult] = useState([]);
+  const [todo, setTodo] = useState([]);
+  // const [inProgress, setInProgress] = useState([]);
+
   return (
     <div className="trello">
       <div>
-        <CreateTask result={result} setResult={setResult}/>
+        <CreateTask
+          result={result}
+          setResult={setResult}
+          todo={todo}
+          setTodo={setTodo}
+        />
       </div>
       <div className="tasks">
         <div className="task">
-          <h1>To Do</h1>
-          <Tasks result={result}/>
+          <h3>To Do</h3>
+          {result ? <Todo result={result} /> : null}
         </div>
         <div className="task">
-          <h1>In Progress</h1>
+          <h3>In Progress</h3>
+          <InProgress />
         </div>
         <div className="task">
-          <h1>Done</h1>
+          <h3>Done</h3>
+          <Done />
         </div>
       </div>
     </div>

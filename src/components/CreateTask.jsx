@@ -59,12 +59,17 @@ export default function CreateTask({ setResult, result }) {
     setTaskDesc(e.target.value);
   };
   const handleSubmit = () => {
-    setResult({
-      ...result,
+    const newTask = {
       taskName: taskName,
       taskDesc: taskDesc,
       assignTo: selectedUser,
-    });
+    };
+
+    setResult([...result, newTask]);
+    handleClose();
+    setTaskName("");
+    setTaskDesc("");
+    setSelectedUser(null);
   };
   return (
     <div>
