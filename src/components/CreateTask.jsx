@@ -33,7 +33,7 @@ const textFieldStyle = {
   marginTop: "10px",
 };
 
-export default function CreateTask({ setResult, result }) {
+export default function CreateTask({ setTodo, todo }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -65,7 +65,7 @@ export default function CreateTask({ setResult, result }) {
       assignTo: selectedUser,
     };
 
-    setResult([...result, newTask]);
+    setTodo([...todo, newTask]);
     handleClose();
     setTaskName("");
     setTaskDesc("");
