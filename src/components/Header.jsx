@@ -22,12 +22,14 @@ export default function Header({ first }) {
         <FlagCircleOutlinedIcon className="flag icon" />
         <NotificationsNoneOutlinedIcon className="notification icon" />
         <AppsRoundedIcon className="apps icon" />
-        <div className="account-icon">
-          <p>
-            Hi, <span>{first}</span>
-          </p>
-          <FaceRoundedIcon className="face icon" />
-        </div>
+        {first ? (
+          <div className="account-icon">
+            <p>
+              Hi, <span>{first}</span>
+            </p>
+            <FaceRoundedIcon className="face icon" />
+          </div>
+        ) : null}
       </div>
     </div>
   );
