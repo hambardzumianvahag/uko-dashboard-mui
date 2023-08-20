@@ -17,6 +17,7 @@ export default function Cards(props) {
       >
         <CardContent sx={{ padding: 1 }}>
           <Typography
+            component={"span"}
             sx={{ fontSize: 14 }}
             margin="0 0 10px 0"
             color="text.secondary"
@@ -33,6 +34,7 @@ export default function Cards(props) {
             {props.second}
           </Typography>
           <Typography
+            component={"span"}
             margin="0 0 10px 0"
             sx={{ fontSize: 15 }}
             arrow="props.arrow"

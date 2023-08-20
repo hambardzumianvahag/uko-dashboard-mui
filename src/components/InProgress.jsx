@@ -16,6 +16,7 @@ export default function InProgress({
           <Card key={index} className="task-card">
             <CardContent>
               <Typography
+                component={"span"}
                 sx={{ fontSize: 14 }}
                 color="text.secondary"
                 gutterBottom
@@ -25,9 +26,13 @@ export default function InProgress({
               <Typography variant="h5" component="div">
                 {item.taskName}
               </Typography>
-              <Typography color="text.secondary">Task Description</Typography>
+              <Typography component={"span"} color="text.secondary">
+                Task Description
+              </Typography>
               <Typography variant="body2">{item.taskDesc}</Typography>
-              <Typography color="text.secondary">Assigned To</Typography>
+              <Typography component={"span"} color="text.secondary">
+                Assigned To
+              </Typography>
               <Typography variant="body2">{item.assignTo.name}</Typography>
             </CardContent>
             <div className="btns">

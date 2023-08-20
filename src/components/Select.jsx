@@ -3,12 +3,21 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { FormHelperText } from "@mui/material";
 
-export default function BasicSelect({ user, setSelectedUser, selectedUser }) {
+export default function BasicSelect({
+  user,
+  setSelectedUser,
+  selectedUser,
+  error,
+  setError,
+}) {
   const handleChange = (event) => {
     setSelectedUser(event.target.value);
+    if (error) {
+      setError(false);
+    }
   };
-
   return (
     <div>
       <FormControl sx={{ minWidth: 120 }}>
@@ -24,10 +33,11 @@ export default function BasicSelect({ user, setSelectedUser, selectedUser }) {
         <Select
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
-          value={selectedUser}
+          value={selectedUser || ""}
           onChange={handleChange}
           autoWidth
           label="User"
+          error={error}
         >
           {user.map((item, key) => {
             return (
@@ -37,6 +47,7 @@ export default function BasicSelect({ user, setSelectedUser, selectedUser }) {
             );
           })}
         </Select>
+        {error && <FormHelperText>Select a user</FormHelperText>}
       </FormControl>
     </div>
   );

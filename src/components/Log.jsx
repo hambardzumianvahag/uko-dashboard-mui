@@ -20,7 +20,7 @@ function CustomTabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Typography component={"span"}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -40,7 +40,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Log({switchTrello, setFirst, first}) {
+export default function Log({ switchTrello, setFirst, first }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -69,7 +69,6 @@ export default function Log({switchTrello, setFirst, first}) {
       <CustomTabPanel value={value} index={1}>
         <SignIn switchTrello={switchTrello} setFirst={setFirst} first={first} />
       </CustomTabPanel>
-
     </Box>
   );
 }

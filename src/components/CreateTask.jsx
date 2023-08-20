@@ -42,6 +42,11 @@ export default function CreateTask({ setTodo, todo }) {
   const [taskDesc, setTaskDesc] = React.useState("");
   const [selectedUser, setSelectedUser] = React.useState(null);
 
+  const [taskNameError, setTaskNameError] = React.useState(false);
+  const [taskDescError, setTaskDescError] = React.useState(false);
+
+  const [selectedUserError, setSelectedUserError] = React.useState(false);
+
   React.useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((r) => r.json())
@@ -59,6 +64,25 @@ export default function CreateTask({ setTodo, todo }) {
     setTaskDesc(e.target.value);
   };
   const handleSubmit = () => {
+    if (!taskName) {
+      setTaskNameError(true);
+      return;
+    } else {
+      setTaskNameError(false);
+    }
+    if (!taskDesc) {
+      setTaskDescError(true);
+      return;
+    } else {
+      setTaskDescError(false);
+    }
+
+    if (!selectedUser) {
+      setSelectedUserError(true);
+      return;
+    } else {
+      setSelectedUserError(false);
+    }
     const newTask = {
       taskName: taskName,
       taskDesc: taskDesc,
@@ -92,17 +116,29 @@ export default function CreateTask({ setTodo, todo }) {
               label="Task Name"
               variant="outlined"
               style={textFieldStyle}
-              onChange={handleName}
+              onChange={(e) => {
+                handleName(e);
+                setTaskNameError(false); // Clear error on input change
+              }}
+              error={taskNameError}
+              helperText={taskNameError && "Task Name is required"}
             />
             <TextareaAutosize
               className="text-area"
               placeholder="Task Description"
-              onChange={handleDesc}
+              onChange={(e) => {
+                handleDesc(e);
+                setTaskDescError(false);
+              }}
+              error={taskDescError}
+              helperText={taskDescError && "Task Description is required"}
             />
             <BasicSelect
               user={user}
               setSelectedUser={setSelectedUser}
               selectedUser={selectedUser}
+              error={selectedUserError}
+              setError={setSelectedUserError}
             />
             <Button
               onClick={() => {

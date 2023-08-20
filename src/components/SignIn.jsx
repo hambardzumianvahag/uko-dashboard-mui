@@ -24,8 +24,8 @@ export default function SignIn({ switchTrello, first, setFirst }) {
   const [password, setPassword] = useState("");
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
-    setOpen(true)
-	setFirst(localStorage.getItem('user login'))
+    setOpen(true);
+    setFirst(localStorage.getItem('user login'));
   };
   const handleClose = () => setOpen(false);
 
@@ -35,12 +35,21 @@ export default function SignIn({ switchTrello, first, setFirst }) {
   const handlePassword = (event) => {
     setPassword(event.target.value);
   };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    handleOpen();
+  };
+
   return (
     <div>
-      <Box
-        component="form"
-        sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
+      <form
+        onSubmit={handleFormSubmit}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
         }}
         noValidate
         autoComplete="off"
@@ -50,25 +59,20 @@ export default function SignIn({ switchTrello, first, setFirst }) {
           id="outlined-basic"
           label="Login"
           variant="outlined"
-        />{" "}
-        <br />
+          style={{ marginBottom: "1rem", width: "250px" }} // Adjust width
+        />
         <TextField
           onChange={handlePassword}
           id="outlined-password-input"
           label="Password"
           type="password"
           autoComplete="current-password"
-        />{" "}
-        <br />
-        <Button
-          onClick={() => {
-            handleOpen();
-          }}
-          variant="outlined"
-        >
+          style={{ marginBottom: "1rem", width: "250px" }} // Adjust width
+        />
+        <Button type="submit" variant="outlined">
           Enter
         </Button>
-      </Box>
+      </form>
       <Modal
         open={open}
         onClose={handleClose}
